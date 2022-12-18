@@ -1,4 +1,5 @@
 /* eslint global-require: off, no-console: off, promise/always-return: off */
+/* eslint global-require: off, no-console: off, promise/always-return: off */
 
 /**
  * This module executes inside of electron's main process. You can start
@@ -11,6 +12,7 @@
 import path from 'path';
 import { app, BrowserWindow, shell, ipcMain } from 'electron';
 import { autoUpdater } from 'electron-updater';
+import Store from 'electron-store';
 import log from 'electron-log';
 import MenuBuilder from './menu';
 import { resolveHtmlPath } from './util';
@@ -56,6 +58,8 @@ const installExtensions = async () => {
     .catch(console.log);
 };
 
+const store = new Store();
+
 const createWindow = async () => {
   if (isDebug) {
     await installExtensions();
@@ -71,19 +75,34 @@ const createWindow = async () => {
 
   const width = 588;
   const height = 350;
-
-  mainWindow = new BrowserWindow({
+  const winConfig = {
     show: false,
     width,
     height,
     autoHideMenuBar: true,
     icon: getAssetPath('icon.png'),
+    center: true,
     webPreferences: {
       preload: app.isPackaged
         ? path.join(__dirname, 'preload.js')
         : path.join(__dirname, '../../.erb/dll/preload.js'),
+      devTools: true,
     },
-  });
+  };
+
+  const savedWin = store.get('size');
+
+  if (
+    savedWin &&
+    typeof savedWin === 'object' &&
+    'width' in savedWin &&
+    'height' in savedWin
+  ) {
+    winConfig.width = savedWin.width as number;
+    winConfig.height = savedWin.height as number;
+  }
+
+  mainWindow = new BrowserWindow(winConfig);
 
   mainWindow.loadURL(resolveHtmlPath('index.html'));
 
@@ -98,6 +117,10 @@ const createWindow = async () => {
     }
   });
 
+  mainWindow.on('close', () => {
+    store.set('size', mainWindow?.getBounds());
+  });
+
   mainWindow.on('closed', () => {
     mainWindow = null;
   });
@@ -110,6 +133,19 @@ const createWindow = async () => {
     shell.openExternal(edata.url);
     return { action: 'deny' };
   });
+
+  // const size = JSON.parse(
+  //   await mainWindow?.webContents.executeJavaScript(
+  //     'localStorage.getItem("size");',
+  //     true
+  //   )
+  // );
+
+  // console.log('size:', size);
+
+  // if (size !== null) {
+  //   mainWindow.setSize(size.width, size.height);
+  // }
 
   // Remove this if your app does not use auto updates
   // eslint-disable-next-line
