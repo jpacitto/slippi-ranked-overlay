@@ -6,6 +6,7 @@ const getUserData = (data: any) => {
   const key = Object.keys(data)[0];
 
   const userData = {
+    connectCode: data[key]?.data?.data.getConnectCode.user.connectCode.code,
     displayName: data[key]?.data?.data.getConnectCode.user.displayName,
     ...data[key]?.data?.data.getConnectCode.user.rankedNetplayProfile,
   };

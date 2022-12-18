@@ -4,11 +4,11 @@ const rankStyles = (
   rating: number | string,
   regionalPlacement: number
 ) => {
-  // const iconPath = './src/res/ranked_icons/';
-  const iconPath = 'renderer/assets/images/ranked_icons/';
   let rankIcon = '';
   let rank = '';
   let color = null;
+
+  console.log('rating:', rating);
 
   if (rating === 1100 && wins === null && losses === null) {
     rankIcon = 'unranked';
@@ -95,7 +95,7 @@ const rankStyles = (
   }
 
   return {
-    iconPath: `${iconPath}${rankIcon}.svg`,
+    icon: rankIcon,
     division: rank,
     color,
   };

@@ -2,37 +2,34 @@ import useUserData from 'renderer/redux/hooks/useUserData';
 import RankIcon from 'renderer/components/RankIcon/RankIcon';
 import getRegion from 'renderer/utils/region';
 import rankStyles from 'renderer/utils/rankStyles';
+import { ReactComponent as WhiteMotif } from 'renderer/assets/images/slippi/WhiteMotifLarge.svg';
 
 import './DefaultLayout.css';
 
 const DefaultLayout = () => {
   const data = useUserData();
 
-  console.log('data:', data);
-
   const rank = rankStyles(
-    data.ratingOrdinal,
     data.wins,
     data.losses,
+    data.ratingOrdinal,
     data.dailyRegionalPlacement
   );
 
+  const contentStyle = {
+    backgroundImage: `linear-gradient(to right, transparent 30%, ${rank.color})`,
+  };
+
   return (
-    <div id="content">
-      <img
-        className="background-design design-1"
-        src="./src/res/slippi/WhiteMotifLarge.svg"
-        alt="white motif"
-      />
-      <img
-        className="background-design design-2"
-        src="./src/res/slippi/WhiteMotifLarge.svg"
-        alt="white motif"
-      />
+    <div id="content" style={contentStyle}>
+      <WhiteMotif className="background-design design-1" />
+      <WhiteMotif className="background-design design-2" />
 
       <p id="player-tag">{data.displayName}</p>
-      <p id="player-slippi-id">undefined#0</p>
-      <RankIcon />
+      <p id="player-slippi-id">{data.connectCode}</p>
+      <div id="ranked-icon">
+        <RankIcon />
+      </div>
       <p id="player-rank">{rank.division}</p>
       <p id="player-rating">{data.ratingOrdinal}</p>
 

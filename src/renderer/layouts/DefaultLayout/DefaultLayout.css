@@ -1,22 +1,22 @@
-/* @font-face {
+@font-face {
   font-family: MavenProRegular;
-  src: url('./src/res/fonts/MavenPro/MavenPro-Regular.ttf');
+  src: url('renderer/assets/fonts/MavenPro/MavenPro-Regular.ttf');
 }
 
 @font-face {
   font-family: MavenProMedium;
-  src: url('./src/res/fonts/MavenPro/MavenPro-Medium.ttf');
+  src: url('renderer/assets/fonts/MavenPro/MavenPro-Medium.ttf');
 }
 
 @font-face {
   font-family: Rubix;
-  src: url('./src/res/fonts/Rubik/Rubik-Regular.ttf');
+  src: url('renderer/assets/fonts/Rubik/Rubik-Regular.ttf');
 }
 
 @font-face {
   font-family: RubixMedium;
-  src: url('./src/res/fonts/Rubik/Rubik-Medium.ttf');
-} */
+  src: url('renderer/assets/fonts/Rubik/Rubik-Medium.ttf');
+}
 
 body {
   background-color: #2d313a;
@@ -71,7 +71,7 @@ p {
   margin-bottom: 25px;
 }
 
-#ranked-icon {
+.ranked-icon {
   height: 85px;
   display: block;
   margin-left: auto;

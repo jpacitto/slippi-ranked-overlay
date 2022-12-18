@@ -3,7 +3,7 @@ import UserData from '../../types/userData';
 
 const slippiEndpoint =
   'https://gql-gateway-dot-slippi.uc.r.appspot.com/graphql';
-
+//
 const profilePayload = (slippiId: string) => {
   return {
     operationName: 'AccountManagementPageQuery',
@@ -14,6 +14,7 @@ const profilePayload = (slippiId: string) => {
     query: `fragment userProfilePage on User {
         displayName
         status
+        connectCode { code }
         rankedNetplayProfile {
           ratingOrdinal
           ratingUpdateCount
