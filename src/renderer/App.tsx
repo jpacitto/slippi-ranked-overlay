@@ -1,16 +1,9 @@
-import { MemoryRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
 
-import Hello from './components/Hello';
+import SlippiRankedOverlay from './pages/SlippiRankedOverlay/SlippiRankedOverlay';
 
 const App = () => {
-  return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<Hello />} />
-      </Routes>
-    </Router>
-  );
+  return <SlippiRankedOverlay />;
 };
 
 export default App;
