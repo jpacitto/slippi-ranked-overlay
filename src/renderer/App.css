@@ -1,3 +1,23 @@
+@font-face {
+  font-family: MavenPro;
+  src: url('../../assets/fonts/MavenPro/MavenPro-Regular.ttf');
+}
+
+@font-face {
+  font-family: MavenProMedium;
+  src: url('../../assets/fonts/MavenPro/MavenPro-Medium.ttf');
+}
+
+@font-face {
+  font-family: Rubix;
+  src: url('../../assets/fonts/Rubik/Rubik-Regular.ttf');
+}
+
+@font-face {
+  font-family: RubixMedium;
+  src: url('../../assets/fonts/Rubik/Rubik-Medium.ttf');
+}
+
 body {
   height: 100vh;
   margin: 0;
