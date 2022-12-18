@@ -2,15 +2,18 @@ import useUserData from '../../redux/hooks/useUserData';
 import rankStyles from '../../utils/rankStyles';
 
 const RankIcon = () => {
-  const userData = useUserData();
+  const { ratingOrdinal, wins, losses, dailyRegionalPlacement } = useUserData();
+
   const styles = rankStyles(
-    userData.ratingOrdinal,
-    userData.wins,
-    userData.losses,
-    userData.dailyRegionalPlacement
+    ratingOrdinal,
+    wins,
+    losses,
+    dailyRegionalPlacement
   );
 
-  return <img src={styles.rankIcon} alt={styles.rankName} />;
+  console.log('iconPath:', styles.iconPath);
+
+  return <img src={styles.iconPath} alt={styles.division} />;
 };
 
 export default RankIcon;

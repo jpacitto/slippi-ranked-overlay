@@ -4,7 +4,8 @@ const rankStyles = (
   rating: number | string,
   regionalPlacement: number
 ) => {
-  const iconPath = './src/res/ranked_icons/';
+  // const iconPath = './src/res/ranked_icons/';
+  const iconPath = 'renderer/assets/images/ranked_icons/';
   let rankIcon = '';
   let rank = '';
   let color = null;
@@ -94,8 +95,8 @@ const rankStyles = (
   }
 
   return {
-    rankIcon: `${iconPath}${rankIcon}.svg`,
-    rankName: rank,
+    iconPath: `${iconPath}${rankIcon}.svg`,
+    division: rank,
     color,
   };
 };

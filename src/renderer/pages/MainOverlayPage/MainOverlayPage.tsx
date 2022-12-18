@@ -1,5 +1,7 @@
+import DefaultLayout from 'renderer/layouts/DefaultLayout';
+
 const MainOverlayPage = () => {
-  return <div>Main Overlay Page</div>;
+  return <DefaultLayout />;
 };
 
 export default MainOverlayPage;

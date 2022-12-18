@@ -1,0 +1,161 @@
+/* @font-face {
+  font-family: MavenProRegular;
+  src: url('./src/res/fonts/MavenPro/MavenPro-Regular.ttf');
+}
+
+@font-face {
+  font-family: MavenProMedium;
+  src: url('./src/res/fonts/MavenPro/MavenPro-Medium.ttf');
+}
+
+@font-face {
+  font-family: Rubix;
+  src: url('./src/res/fonts/Rubik/Rubik-Regular.ttf');
+}
+
+@font-face {
+  font-family: RubixMedium;
+  src: url('./src/res/fonts/Rubik/Rubik-Medium.ttf');
+} */
+
+body {
+  background-color: #2d313a;
+  margin: 0;
+  overflow: hidden;
+}
+
+p {
+  font-family: MavenProRegular;
+  color: #e9eaea;
+  text-align: center;
+  letter-spacing: 0.00938em;
+  margin: 0;
+}
+
+#content {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.background-design {
+  opacity: 0.05;
+  position: absolute;
+  user-select: none;
+  pointer-events: none;
+}
+
+.design-1 {
+  left: -60px;
+  top: -30px;
+}
+
+.design-2 {
+  right: -30px;
+  bottom: -30px;
+}
+
+#player-tag {
+  font-family: MavenProMedium;
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+#player-slippi-id {
+  font-size: 20px;
+  color: #b4b4b4;
+  line-height: 1.5;
+  margin-bottom: 25px;
+}
+
+#ranked-icon {
+  height: 85px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 30px;
+}
+
+#player-rank {
+  font-family: MavenProMedium;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+#player-rating {
+  font-size: 16px;
+  color: rgb(147, 149, 153);
+}
+
+.more-info {
+  position: absolute;
+  gap: 9px;
+  display: grid;
+  grid-gap: 9px;
+  grid-auto-flow: row;
+}
+
+#more-info-left {
+  left: 20px;
+}
+
+#more-info-right {
+  right: 20px;
+}
+
+#more-info-section {
+  z-index: 100;
+  background-color: #23252c27;
+  border-radius: 12px;
+  opacity: 1;
+  padding: 10px 20px;
+}
+
+#more-info-title {
+  font-family: MavenProMedium;
+  font-size: 14px;
+  color: rgb(147, 149, 153);
+  margin-bottom: 10px;
+}
+
+#region {
+  font-family: Rubix;
+  font-size: 16px;
+  color: #e9eaea;
+  letter-spacing: 0.00938em;
+}
+
+#total-sets {
+  font-family: Rubix;
+  font-size: 16px;
+  color: #e9eaea;
+  letter-spacing: 0.00938em;
+}
+
+#wl-wrapper {
+  display: flex;
+  flex-direction: row;
+}
+
+#w {
+  font-family: RubixMedium;
+  font-size: 16px;
+  color: rgb(46, 204, 64);
+  margin-right: 6px;
+}
+
+#wl-slash {
+  font-family: RubixMedium;
+  font-size: 16px;
+  color: rgb(147, 149, 153);
+  margin-right: 6px;
+}
+
+#l {
+  font-family: RubixMedium;
+  font-size: 16px;
+  color: rgb(255, 77, 0);
+}
