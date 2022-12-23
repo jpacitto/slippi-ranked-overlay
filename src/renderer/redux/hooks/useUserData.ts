@@ -21,7 +21,6 @@ const getUserData = (data: any, slippiTag: string) => {
 const useUserData = () => {
   const slippiTag: any = useAppSelector((state) => state.slippiTagReducer.tag);
   const data = useAppSelector((state) => state.slippiApi.queries);
-  console.log('data:', data);
   return useMemo(() => getUserData(data, slippiTag), [data, slippiTag]);
 };
 
