@@ -1,0 +1,39 @@
+.config-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  column-gap: 20px;
+}
+
+.config-menu-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  row-gap: 10px;
+  height: 100%;
+}
+
+.MuiButtonBase-root.Mui-selected {
+  color: #ffffff;
+  background-color: #8491ac;
+}
+
+.MuiButtonBase-root.Mui-selected:hover {
+  color: #ffffff;
+  background-color: #8491ac;
+}
+
+.MuiButtonBase-root:hover {
+  background-color: #8491ac;
+}
+
+.tag-selected {
+  color: white;
+  position: absolute;
+  left: 10px;
+  top: 10px;
+}
