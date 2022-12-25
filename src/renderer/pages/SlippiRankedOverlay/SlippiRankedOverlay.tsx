@@ -2,7 +2,6 @@ import { useState } from 'react';
 
 import MainOverlayPage from '../MainOverlayPage/MainOverlayPage';
 import ConfigPage from '../ConfigPage';
-import NoTagSelectedPage from '../NoTagSelectedPage';
 
 import './SlippiRankedOverlay.css';
 
@@ -30,8 +29,7 @@ const SlippiRankedOverlay = () => {
       onContextMenu={handlePageSwap}
       role="presentation"
     >
-      {/* {pageType === PageType.Config ? <ConfigPage /> : <MainOverlayPage />} */}
-      {pageType === PageType.Config ? <MainOverlayPage /> : <ConfigPage />}
+      {pageType === PageType.Config ? <ConfigPage /> : <MainOverlayPage />}
     </div>
   );
 };

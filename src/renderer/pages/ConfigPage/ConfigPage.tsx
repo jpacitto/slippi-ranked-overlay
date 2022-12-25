@@ -56,7 +56,7 @@ const ConfigPage = () => {
         ))}
       </ToggleButtonGroup> */}
       <Box className="config-menu-container">
-        <Typography class="tag-selected">{`Tag: ${slippiTag}`}</Typography>
+        <Typography className="tag-selected">{`Tag: ${slippiTag}`}</Typography>
         <Button
           variant="contained"
           className="tagConfigButton"
